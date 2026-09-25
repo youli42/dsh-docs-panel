@@ -5,7 +5,7 @@
 [![npm](https://img.shields.io/npm/v/dsh-docs-panel)](https://www.npmjs.com/package/dsh-docs-panel)
 [![license](https://img.shields.io/npm/l/dsh-docs-panel)](https://github.com/mlosun/dsh-docs-panel/blob/main/LICENSE)
 [![requires](https://img.shields.io/badge/requires-dsh--better--sidebar-4d6bfe)](https://github.com/omdsh-dev/DSH-better-sidebar)
-[![platform](https://img.shields.io/badge/platform-macOS-lightgrey)](https://github.com/mlosun/dsh-docs-panel)
+[![platform](https://img.shields.io/badge/platform-macOS%20%7C%20Windows-lightgrey)](https://github.com/mlosun/dsh-docs-panel)
 
 把你自己整理的 Markdown 笔记，直接搬进 DeepSeek Harness 的侧边栏里读。
 
@@ -24,7 +24,7 @@
 - 📚 **列表点选阅读**：自动列出文档目录下所有 `.md` 文件（含子目录），点一下就读；
 - 🎨 **良好排版**：标题、列表、表格、代码块、引用、链接都渲染得规整，自动适配亮色/暗色主题；
 - 🧭 **悬浮大纲**：一键展开文档目录，点标题平滑跳转（默认收起，不打扰阅读）；
-- 🌐 **外部打开**：每篇文档提供「Chrome 打开」「VS Code 打开」按钮，随时转到编辑器继续编辑（目前仅支持 macOS）；
+- 🌐 **外部打开**：每篇文档提供「Chrome 打开」「VS Code 打开」按钮，随时转到编辑器继续编辑（macOS 走 `open -a`，Windows 走 `Start-Process`，VS Code 需 `code` 在 PATH 上）；
 - 📋 **代码复制**：代码块右上角一键复制；
 - 📁 **目录可配置**：默认读 `~/.dsh/docs`，可在面板里改成任何目录，保存后永久生效；
 - 🧩 **侧边栏集成**：作为 better-sidebar 的一个 tab 注册，与内置页面同风格（图标、头部、按钮对齐内置），随侧边栏布局按会话持久化。
@@ -59,7 +59,7 @@ dsh plugin --profile web remove dsh-docs-panel
 
 1. 打开 dsh 侧边栏，点「＋」菜单，选「全局文档」（或直接点已固定的「全局文档」tab）；
 2. 左侧列表点选一篇文档，右侧阅读；
-3. ⚙️ 修改文档目录（默认 `~/.dsh/docs`，保存到 `~/.dsh/storages/dsh-docs-panel/config.json`）；
+3. ⚙️ 修改文档目录（默认 `~/.dsh/docs`，保存到 `$DSH_HOME/storages/dsh-docs-panel/config.json`，未设 `$DSH_HOME` 时即 `~/.dsh/…`）；
 4. 「☰ 大纲」展开目录，「Chrome / VS Code 打开」转到编辑器。
 
 ## 常见问题
