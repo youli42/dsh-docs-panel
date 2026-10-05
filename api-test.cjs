@@ -62,7 +62,7 @@ function boot() {
   const ctx = {
     get(name) {
       if (name === 'fs') return makeFsService()
-      if (name === 'shell') return { resolve: (spec) => spec, run: async () => ({ exitCode: 0 }) }
+      if (name === 'shell') return { resolve: (spec) => spec, execute: async () => ({ result: async () => ({ exitCode: 0 }) }) }
       if (name === 'webServer') return { register: (r) => { route = r; return () => {} } }
       return undefined
     },
